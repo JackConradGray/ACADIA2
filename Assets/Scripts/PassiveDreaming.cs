@@ -26,9 +26,9 @@ public enum DreamStateDream
 {
 	None=0,
 	Building,
-	//Shoe,
-	//Hat,
-	//Dress,
+	Shoe,
+	Hat,
+	Dress,
 	IPad,
 	Car,
 }
@@ -39,10 +39,12 @@ public enum DreamStateMaterial
 	Bricks,
 	Fur,
 	IconArray,
+	SandWaves,
 	Orange,
 	FineWeave,
 	Marble,
 	Moss,
+	WindowsCup,
 }
 
 	
@@ -57,14 +59,10 @@ public class PassiveDreaming : MonoBehaviour
 {
 	//static DateTime s_LastIteration = new DateTime(0);
 	static Dictionary<DreamStateTarget, DateTime> s_LastTargetTime=new Dictionary<DreamStateTarget, DateTime>();
-	static TimeSpan s_PassiveTimeOffset = new TimeSpan(0,0,0,2);
+	static TimeSpan s_PassiveTimeOffset = new TimeSpan(0,0,1);
 	static long s_PassiveTimeIncrement = new TimeSpan(0,0,6).Ticks;
 	static Dictionary<DreamStateTarget, GameObject> s_mTargets = new Dictionary<DreamStateTarget, GameObject>();
 	static Dictionary<string, GameObject> s_mContext = new Dictionary<string, GameObject>();
-
-
-	//static DreamStateTarget s_PriorTarget = DreamStateTarget.None;
-	//static Shader s_SolidShader=null;
 
 	// Use this for initialization
 	void Start () 
@@ -114,18 +112,33 @@ public class PassiveDreaming : MonoBehaviour
 			int nDSD=Enum.GetNames(typeof(DreamStateDream)).Length; 
 			int nDSM=Enum.GetNames(typeof(DreamStateMaterial)).Length;  
 			DreamState.Dream=(DreamStateDream)UnityEngine.Random.Range(1,nDSD);
-			DreamState.Material=(DreamStateMaterial)UnityEngine.Random.Range(1,nDSM);
-			s_LastTargetTime[target]=DateTime.Now;
-			string strMaterial=DreamState.Material.ToString();
-			//print("Updated "+target.ToString()+" to dream: " + DreamState.Dream.ToString() + " with material: "+ strMaterial);
-			string strMaterialPath= "Materials/"+strMaterial;
-			Material material = Resources.Load(strMaterialPath, typeof(Material)) as Material; 
-			GameObject targetGo=s_mTargets[target];
-			MeshRenderer meshRenderer = targetGo.GetComponent<MeshRenderer>();
-			meshRenderer.material=material;
-			meshRenderer.shadowCastingMode= UnityEngine.Rendering.ShadowCastingMode.On;
-			meshRenderer.receiveShadows=true;
-			targetGo.SetActive(true);
+			bool bWindowsCup=false;/*((DreamStateTarget.Mug == target)&&
+			                  (DreamStateDream.Building==DreamState.Dream));*/
+			Material material=null;
+			if(bWindowsCup)
+			{
+				string strMaterialPath="Materials/WindowsCup";
+				DreamState.Material=DreamStateMaterial.WindowsCup;
+				material=Resources.Load(strMaterialPath,typeof(Material)) as Material; 
+			}
+			else
+			{
+				DreamState.Material=(DreamStateMaterial)UnityEngine.Random.Range(1,nDSM-1);
+				string strMaterial=DreamState.Material.ToString();
+				//print("Updated "+target.ToString()+" to dream: " + DreamState.Dream.ToString() + " with material: "+ strMaterial);
+				string strMaterialPath="Materials/"+strMaterial;
+				material=Resources.Load(strMaterialPath,typeof(Material)) as Material; 
+			}
+			if(null!=material)
+			{
+				s_LastTargetTime[target]=DateTime.Now;
+				GameObject targetGo=s_mTargets[target];
+				MeshRenderer meshRenderer=targetGo.GetComponent<MeshRenderer>();
+				meshRenderer.material=material;
+				meshRenderer.shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.On;
+				meshRenderer.receiveShadows=true;
+				targetGo.SetActive(true);
+			}
 
 			// hide all contexts
 			foreach(DreamStateDream dream in Enum.GetValues(typeof(DreamStateDream)))
@@ -141,7 +154,7 @@ public class PassiveDreaming : MonoBehaviour
 			{
 				GameObject contextGo=s_mContext[strNewContextKey];
 				contextGo.SetActive(true);
-				print("Updated "+target.ToString()+" to context: " + strNewContextKey );
+				//print("Updated "+target.ToString()+" to context: " + strNewContextKey );
 			}
 		}
 	}
