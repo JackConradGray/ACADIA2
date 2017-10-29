@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.5748249, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1211,7 +1211,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 36998c957b5b5d54e8c76583df1086df, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 45fd172ca4caf4ddfa49f775becf9b1a, type: 2}
+      objectReference: {fileID: 2100000, guid: a038815b0e4663e44b46b50b7328bf5f, type: 2}
     - target: {fileID: 100000, guid: 36998c957b5b5d54e8c76583df1086df, type: 3}
       propertyPath: m_Name
       value: Teapot
