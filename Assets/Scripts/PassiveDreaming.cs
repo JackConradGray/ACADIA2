@@ -44,9 +44,9 @@ public enum DreamStateMaterial
 	FineWeave,
 	Marble,
 	Moss,
-	BuidingMug,
-	BuidingTeapot,
-	BuidingVase,
+	BuildingMug,
+	BuildingTeapot,
+	BuildingVase,
 }
 
 	
@@ -89,7 +89,7 @@ public class PassiveDreaming : MonoBehaviour
 			GameObject go = GameObject.Find(strTarget);
 			s_mTargets[target]=go;
 			s_mTargets[target].SetActive(false); 
-			s_LastTargetTime[target]= DateTime.Now - new TimeSpan(((int)target) * s_PassiveTimeOffset.Ticks);
+			s_LastTargetTime[target]= DateTime.Now - new TimeSpan(((int)target) * 2 * s_PassiveTimeOffset.Ticks);
 		}
 		// cache the context GOs
 		foreach (DreamStateContext context in Enum.GetValues(typeof(DreamStateContext)))
@@ -121,16 +121,16 @@ public class PassiveDreaming : MonoBehaviour
 					switch(target)
 					{
 						case DreamStateTarget.Teapot:
-							//DreamState.Material=DreamStateMaterial.BuidingTeapot;
-							DreamState.Material=DreamStateMaterial.Bricks;
+							DreamState.Material=DreamStateMaterial.BuildingTeapot;
+							//DreamState.Material=DreamStateMaterial.Bricks;
 							break;
 						case DreamStateTarget.Mug:
-							//DreamState.Material=DreamStateMaterial.BuidingMug;
-							DreamState.Material=DreamStateMaterial.Bricks;
+							DreamState.Material=DreamStateMaterial.BuildingMug;
+							//DreamState.Material=DreamStateMaterial.Bricks;
 							break;
 						case DreamStateTarget.Vase:
-							DreamState.Material=DreamStateMaterial.Bricks;
-						//	DreamState.Material=DreamStateMaterial.BuidingVase;
+							//DreamState.Material=DreamStateMaterial.Bricks;
+							DreamState.Material=DreamStateMaterial.BuildingVase;
 							break;
 						default:
 							DreamState.Material=(DreamStateMaterial)UnityEngine.Random.Range(1,nDSM-3);
