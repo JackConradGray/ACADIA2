@@ -29,7 +29,7 @@ public enum DreamStateDream
 	Shoe,
 	Hat,
 	Dress,
-	IPad,
+	iPad,
 	Car,
 }
 
@@ -44,7 +44,9 @@ public enum DreamStateMaterial
 	FineWeave,
 	Marble,
 	Moss,
-	WindowsCup,
+	BuidingMug,
+	BuidingTeapot,
+	BuidingVase,
 }
 
 	
@@ -87,7 +89,7 @@ public class PassiveDreaming : MonoBehaviour
 			GameObject go = GameObject.Find(strTarget);
 			s_mTargets[target]=go;
 			s_mTargets[target].SetActive(false); 
-			s_LastTargetTime[target]= DateTime.Now + new TimeSpan(((int)target) * s_PassiveTimeOffset.Ticks);
+			s_LastTargetTime[target]= DateTime.Now - new TimeSpan(((int)target) * s_PassiveTimeOffset.Ticks);
 		}
 		// cache the context GOs
 		foreach (DreamStateContext context in Enum.GetValues(typeof(DreamStateContext)))
@@ -112,25 +114,56 @@ public class PassiveDreaming : MonoBehaviour
 			int nDSD=Enum.GetNames(typeof(DreamStateDream)).Length; 
 			int nDSM=Enum.GetNames(typeof(DreamStateMaterial)).Length;  
 			DreamState.Dream=(DreamStateDream)UnityEngine.Random.Range(1,nDSD);
-			bool bWindowsCup=false;/*((DreamStateTarget.Mug == target)&&
-			                  (DreamStateDream.Building==DreamState.Dream));*/
-			Material material=null;
-			if(bWindowsCup)
+			/*
+			switch(DreamState.Dream)
 			{
-				string strMaterialPath="Materials/WindowsCup";
-				DreamState.Material=DreamStateMaterial.WindowsCup;
-				material=Resources.Load(strMaterialPath,typeof(Material)) as Material; 
+				case DreamStateDream.Building:
+					switch(target)
+					{
+						case DreamStateTarget.Teapot:
+							//DreamState.Material=DreamStateMaterial.BuidingTeapot;
+							DreamState.Material=DreamStateMaterial.Bricks;
+							break;
+						case DreamStateTarget.Mug:
+							//DreamState.Material=DreamStateMaterial.BuidingMug;
+							DreamState.Material=DreamStateMaterial.Bricks;
+							break;
+						case DreamStateTarget.Vase:
+							DreamState.Material=DreamStateMaterial.BuidingVase;
+							break;
+						default:
+							DreamState.Material=(DreamStateMaterial)UnityEngine.Random.Range(1,nDSM-3);
+							break;
+					}
+					break;
+
+				case DreamStateDream.iPad:
+					switch(target)
+					{
+						case DreamStateTarget.Vase:
+						case DreamStateTarget.Teapot:
+						case DreamStateTarget.Mug:
+							DreamState.Material=DreamStateMaterial.IconArray;
+							break;
+					}
+					break;
+
+				default:
+					DreamState.Material=(DreamStateMaterial)UnityEngine.Random.Range(1,nDSM-3);
+					break;
 			}
-			else
+
+				*/
+
+			DreamState.Material=(DreamStateMaterial)UnityEngine.Random.Range(1,nDSM-3);
+
+
+			if(DreamState.Material!=DreamStateMaterial.None)
 			{
-				DreamState.Material=(DreamStateMaterial)UnityEngine.Random.Range(1,nDSM-1);
-				string strMaterial=DreamState.Material.ToString();
-				//print("Updated "+target.ToString()+" to dream: " + DreamState.Dream.ToString() + " with material: "+ strMaterial);
-				string strMaterialPath="Materials/"+strMaterial;
-				material=Resources.Load(strMaterialPath,typeof(Material)) as Material; 
-			}
-			if(null!=material)
-			{
+				string strMaterialPath="Materials/"+DreamState.Material.ToString();
+				Material material=Resources.Load(strMaterialPath,typeof(Material)) as Material; 
+				if(null==material)
+					print("null material");
 				s_LastTargetTime[target]=DateTime.Now;
 				GameObject targetGo=s_mTargets[target];
 				MeshRenderer meshRenderer=targetGo.GetComponent<MeshRenderer>();
