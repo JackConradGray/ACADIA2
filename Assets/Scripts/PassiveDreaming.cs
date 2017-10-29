@@ -39,7 +39,7 @@ public enum DreamStateMaterial
 	Bricks,
 	Fur,
 	IconArray,
-	SandWaves,
+	SandWaveas,
 	Orange,
 	FineWeave,
 	Marble,
@@ -114,7 +114,7 @@ public class PassiveDreaming : MonoBehaviour
 			int nDSD=Enum.GetNames(typeof(DreamStateDream)).Length; 
 			int nDSM=Enum.GetNames(typeof(DreamStateMaterial)).Length;  
 			DreamState.Dream=(DreamStateDream)UnityEngine.Random.Range(1,nDSD);
-			/*
+			DreamState.Material=DreamStateMaterial.None;
 			switch(DreamState.Dream)
 			{
 				case DreamStateDream.Building:
@@ -129,7 +129,8 @@ public class PassiveDreaming : MonoBehaviour
 							DreamState.Material=DreamStateMaterial.Bricks;
 							break;
 						case DreamStateTarget.Vase:
-							DreamState.Material=DreamStateMaterial.BuidingVase;
+							DreamState.Material=DreamStateMaterial.Bricks;
+						//	DreamState.Material=DreamStateMaterial.BuidingVase;
 							break;
 						default:
 							DreamState.Material=(DreamStateMaterial)UnityEngine.Random.Range(1,nDSM-3);
@@ -137,27 +138,22 @@ public class PassiveDreaming : MonoBehaviour
 					}
 					break;
 
-				case DreamStateDream.iPad:
-					switch(target)
-					{
-						case DreamStateTarget.Vase:
-						case DreamStateTarget.Teapot:
-						case DreamStateTarget.Mug:
-							DreamState.Material=DreamStateMaterial.IconArray;
-							break;
-					}
-					break;
+				//case DreamStateDream.iPad:
+				//	switch(target)
+				//	{
+				//		case DreamStateTarget.Vase:
+				//		case DreamStateTarget.Teapot:
+				//		case DreamStateTarget.Mug:
+				//			DreamState.Material=DreamStateMaterial.IconArray;
+				//			break;
+				//	}
+				//	break;
 
 				default:
 					DreamState.Material=(DreamStateMaterial)UnityEngine.Random.Range(1,nDSM-3);
 					break;
 			}
-
-				*/
-
-			DreamState.Material=(DreamStateMaterial)UnityEngine.Random.Range(1,nDSM-3);
-
-
+			//DreamState.Material=(DreamStateMaterial)UnityEngine.Random.Range(1,nDSM-3);
 			if(DreamState.Material!=DreamStateMaterial.None)
 			{
 				string strMaterialPath="Materials/"+DreamState.Material.ToString();
