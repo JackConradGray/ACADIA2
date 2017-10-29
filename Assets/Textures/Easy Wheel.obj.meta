@@ -1,0 +1,207 @@
+fileFormatVersion: 2
+guid: c9d57142bdf6d4ec58734ae3f7b9dc16
+timeCreated: 1509223107
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Easy_Wheel_Cylinder
+    100004: Easy_Wheel_Cylinder_1
+    100006: Easy_Wheel_HyperNURBS_1_Cube2
+    100008: Easy_Wheel_HyperNURBS_2_Cube1
+    100010: Easy_Wheel_HyperNURBS_3_Cube4
+    100012: Easy_Wheel_HyperNURBS_4_Cube7
+    100014: Easy_Wheel_HyperNURBS_5_Cube
+    100016: Easy_Wheel_HyperNURBS_6_Cube6
+    100018: Easy_Wheel_HyperNURBS_7_Cube3
+    100020: Easy_Wheel_HyperNURBS_Cube5
+    100022: Easy_Wheel_Tube
+    100024: Easy_Wheel_Tube_1
+    400000: //RootNode
+    400002: Easy_Wheel_Cylinder
+    400004: Easy_Wheel_Cylinder_1
+    400006: Easy_Wheel_HyperNURBS_1_Cube2
+    400008: Easy_Wheel_HyperNURBS_2_Cube1
+    400010: Easy_Wheel_HyperNURBS_3_Cube4
+    400012: Easy_Wheel_HyperNURBS_4_Cube7
+    400014: Easy_Wheel_HyperNURBS_5_Cube
+    400016: Easy_Wheel_HyperNURBS_6_Cube6
+    400018: Easy_Wheel_HyperNURBS_7_Cube3
+    400020: Easy_Wheel_HyperNURBS_Cube5
+    400022: Easy_Wheel_Tube
+    400024: Easy_Wheel_Tube_1
+    2300000: Easy_Wheel_Cylinder
+    2300002: Easy_Wheel_Cylinder_1
+    2300004: Easy_Wheel_HyperNURBS_1_Cube2
+    2300006: Easy_Wheel_HyperNURBS_2_Cube1
+    2300008: Easy_Wheel_HyperNURBS_3_Cube4
+    2300010: Easy_Wheel_HyperNURBS_4_Cube7
+    2300012: Easy_Wheel_HyperNURBS_5_Cube
+    2300014: Easy_Wheel_HyperNURBS_6_Cube6
+    2300016: Easy_Wheel_HyperNURBS_7_Cube3
+    2300018: Easy_Wheel_HyperNURBS_Cube5
+    2300020: Easy_Wheel_Tube
+    2300022: Easy_Wheel_Tube_1
+    3300000: Easy_Wheel_Cylinder
+    3300002: Easy_Wheel_Cylinder_1
+    3300004: Easy_Wheel_HyperNURBS_1_Cube2
+    3300006: Easy_Wheel_HyperNURBS_2_Cube1
+    3300008: Easy_Wheel_HyperNURBS_3_Cube4
+    3300010: Easy_Wheel_HyperNURBS_4_Cube7
+    3300012: Easy_Wheel_HyperNURBS_5_Cube
+    3300014: Easy_Wheel_HyperNURBS_6_Cube6
+    3300016: Easy_Wheel_HyperNURBS_7_Cube3
+    3300018: Easy_Wheel_HyperNURBS_Cube5
+    3300020: Easy_Wheel_Tube
+    3300022: Easy_Wheel_Tube_1
+    4300000: Easy_Wheel_Cylinder
+    4300002: Easy_Wheel_Cylinder_1
+    4300004: Easy_Wheel_HyperNURBS_1_Cube2
+    4300006: Easy_Wheel_HyperNURBS_2_Cube1
+    4300008: Easy_Wheel_HyperNURBS_3_Cube4
+    4300010: Easy_Wheel_HyperNURBS_4_Cube7
+    4300012: Easy_Wheel_HyperNURBS_5_Cube
+    4300014: Easy_Wheel_HyperNURBS_6_Cube6
+    4300016: Easy_Wheel_HyperNURBS_7_Cube3
+    4300018: Easy_Wheel_HyperNURBS_Cube5
+    4300020: Easy_Wheel_Tube
+    4300022: Easy_Wheel_Tube_1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Easy_Wheel_CylinderMat
+    second: {fileID: 2100000, guid: 2b4d6fe4e34b64e10865c86bba4ef818, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Easy_Wheel_Cylinder_1Mat
+    second: {fileID: 2100000, guid: 6479624bdf2324896bd2a39881090f3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Easy_Wheel_HyperNURBS_1_Cube2Mat
+    second: {fileID: 2100000, guid: 40c29c078adb24b51901bd699c2147c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Easy_Wheel_HyperNURBS_2_Cube1Mat
+    second: {fileID: 2100000, guid: bed24a8b8545544ff85c2ecbec044bd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Easy_Wheel_HyperNURBS_3_Cube4Mat
+    second: {fileID: 2100000, guid: 9fa422ad58bfd4e60923eb1b9a4ad82d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Easy_Wheel_HyperNURBS_4_Cube7Mat
+    second: {fileID: 2100000, guid: 63df3a638404e40fe830eb618e0a9c08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Easy_Wheel_HyperNURBS_5_CubeMat
+    second: {fileID: 2100000, guid: b58d1f92c60bc4842a94238abfc4faad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Easy_Wheel_HyperNURBS_6_Cube6Mat
+    second: {fileID: 2100000, guid: 4ca0051bf5058481b999f8665543ee29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Easy_Wheel_HyperNURBS_7_Cube3Mat
+    second: {fileID: 2100000, guid: 2a9b72d70343e46158c874a3406d033c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Easy_Wheel_HyperNURBS_Cube5Mat
+    second: {fileID: 2100000, guid: 12b28853ed084485a889458ecabd8b88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Easy_Wheel_TubeMat
+    second: {fileID: 2100000, guid: 47c0ae255ced144c29c3c407a276d08d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Easy_Wheel_Tube_1Mat
+    second: {fileID: 2100000, guid: 0072a1f4b793c4cea9cf9d47f9cfa8a6, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
